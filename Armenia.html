@@ -1,101 +1,83 @@
-<html> 
-<style> 
-body{ 
-background-color:pink; 
-} 
-h1 { 
-color: red; 
-text-align: center; 
-text-decoration: underline; 
-text-transform: uppercase; 
-font-style: italic; 
-} 
-td.menu{text-align:center; 
-background-color:white; 
-div } 
+<html>
+<head>
+    <link rel="Stylesheet" href="StyleSheet1.css"></link>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script src="Jscript1.js">
+    </script>
+</head>
+<body>
+    <input type="checkbox" id="g1" />
+    <label for="g1">
+        Любите ли вы Армению?
+    </label>
+    <input type="radio" name="q1" />3
+    <input type="radio" name="q1" />4
+    <input type="radio" name="q1" />5
+    <br>
+    <input type="text" id="g3" />
+    <br />
+    <input type="button" onclick="check()" value="check" />
+    <h1>
+        Армения</h1>
+    <table width="100%">
+        <tr>
+            <td class="menu" onclick="show_pic()" width="30%">
+                Map
+            </td>
+            <td class="menu" onclick="show_game()" width="30%">
+                Game
+            </td>
+            <td class="menu" onclick="show_text()" width="30%">
+                Info
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div id='c2' style="display: none">
+            
+                    <div id="map" style="width: 600px; height: 400px;">
+                    </div>
+                </div>
+                <div id='c3' style="display: none">
+                    game
+                </div>
+                <div id='c1' style="display: none">
+                    <p>
+                        Основная информация:</p>
+                    <ul class="a">
+                        <li>Столица — Ереван. Государственный язык — армянский</li>
+                        <li>Население Армении, по оценочным данным на 1 января 2016 года составило 2 млн. 998,6
+                            тыс. человек, территория - 29 743 км квадратных</li>
+                        <li>почти 95% населения исповедуют христианство</li>
+                        <li>
+                        Президент Армении-Серж Саргсян
+                    </ul>
+                    Флаг<br>
+                    <br>
+                    Красный цвет символизирует Армянское нагорье,постоянную борьбу армянского народа
+                    за существование, христианскую веру, свободу и независимость Армении. Синий цвет
+                    символизирует стремление армянского народа жить под мирным небом. Оранжевый цвет
+                    символизирует созидательный талант и трудолюбие армянского народа. Герб<br>
+                    <br>
+                    Герб составляют следующие элементы:щит — в центре — гора Арарат,которая является
+                    символом армянской нации, на её вершине Ноев ковчег,поскольку, согласно одной из
+                    традиций, ковчег после потопа остановился на горе Арарат. Щит разделён на 4 части,
+                    которые символизируют четыре независимых армянских царства:Аршакидов,Рубенидов,Арташесидов
+                    и Багратидов.
+                </div>
+            </td>
+        </tr>
+    </table>
+        <script type="text/javascript">
+            ymaps.ready(init);
+            var myMap;
+            function init() {
+                myMap = new ymaps.Map("map", {
+                    center: [40.380629, 44.738097],
+                    zoom: 7
+                });
+            }
+    </script>
 
-
-a{ color: white; 
-background-color:red; 
-padding: 5px; 
-border-radius: 30px ; 
-
-} 
-
-</style> 
-<Script type="text/javascript"> 
-function show_pic() { 
-var c1_elem = document.getElementById("c1"); 
-var c2_elem = document.getElementById("c2"); 
-var c3_elem = document.getElementById("c3"); 
-c1_elem.style.display = 'none'; 
-c2_elem.style.display = 'block'; 
-c3_elem.style.dispaly = 'none'; 
-} 
-
-function show_text() { 
-var c1_elem = document.getElementById("c1"); 
-var c2_elem = document.getElementById("c2"); 
-var c3_elem = document.getElementById("c3"); 
-c1_elem.style.display = 'block'; 
-c2_elem.style.display = 'none'; 
-c3_elem.style.dispaly = 'none'; 
-} 
-
-function show_game() { 
-var c1_elem = document.getElementById("c1"); 
-var c2_elem = document.getElementById("c2"); 
-var c3_elem = document.getElementById("c3"); 
-c1_elem.style.display = 'none'; 
-c2_elem.style.display = 'none'; 
-c3_elem.style.dispaly = 'block'; 
-} 
-
-
-</script> 
-
-<body> 
-
-<h1>Армения</h1> 
-
-
-
-<table width="100%" height="20%"> 
-<tr> 
-<td class=menu onclick="show_pic()" width="30%">Map 
-</td> 
-<div id='c2' style="display:none"> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3127484.997040764!2d42.79750605436626!3d40.04898189034175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40155684e773bac7%3A0xd0b4757aeb822d23!2z0JDRgNC80LXQvdC40Y8!5e0!3m2!1sru!2sru!4v1475618134609" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-<div id='c3' style ="display:none" > game <iframe name="xdbcm" id="xdbcm" src="https://0.docs.google.com/forms/d/16xMy46A66HelM4AOOBWgoYmmx76I4aePCscLfWCvswE/xdbcm.html?internal=false&amp;gcp=%7B%22qlc%22%3Anull%2C%22elh%22%3Afalse%2C%22eoo%22%3Atrue%7D&amp;rt=j&amp;xpc=%7B%22cn%22%3A%22docs%22%2C%22tp%22%3A1%2C%22osh%22%3Atrue%2C%22ppu%22%3A%22https%3A%2F%2Fdocs.google.com%2Frobots.txt%22%2C%22lpu%22%3A%22https%3A%2F%2F0.docs.google.com%2Frobots.txt%22%7D" style="display: none;"></iframe>
-</div> 
-</td> 
-
-<td class=menu onclick="show_text()"width="30%">Info</td> 
-
-
-<div id='c1' style ="display:none"> 
-
-<p>Основная информация:</p> 
-<ul class="a"> 
-<li>Столица — Ереван. Государственный язык — армянский</li> 
-<li>Население Армении, по оценочным данным на 1 января 2016 года составило 2 млн. 998,6 тыс. человек, территория - 29 743 км квадратных</li> 
-<li>почти 95% населения исповедуют христианство</li> 
-<li>Президент Армении-Серж Саргсян 
-</ul> 
-Флаг<br> <br> 
-
-Красный цвет символизирует Армянское нагорье,постоянную борьбу армянского народа за существование, христианскую веру, свободу и независимость Армении. Синий цвет символизирует стремление армянского народа жить под мирным небом. Оранжевый цвет символизирует созидательный талант и трудолюбие армянского народа. 
-
-Герб<br> <br> 
-Герб составляют следующие элементы:щит — в центре — гора Арарат,которая является символом армянской нации, на её вершине Ноев ковчег,поскольку, согласно одной из традиций, ковчег после потопа остановился на горе Арарат. Щит разделён на 4 части, которые символизируют четыре независимых армянских царства:Аршакидов,Рубенидов,Арташесидов и Багратидов. 
-
-</div> 
-<td class=menu onclick="show_game()" width="30%">Game 
-</td> 
-</tr> 
-</table> 
-
-
-</body> 
-
-</Html>
+</body>
+</html>
